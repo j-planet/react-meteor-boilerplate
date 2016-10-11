@@ -2,6 +2,8 @@
 
 Included are:
 
+### React and Meteor
+
 * A script that installs and adds commonly used React and Meteor packages
 * client, server, api directory setup
 * React routing
@@ -10,3 +12,7 @@ Included are:
 * Meteor server-side publishing
 * Meteor client-side subscribing
 * A basic user profile page
+
+### Styling
+
+* Bootstrap and jQuery
