@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 
 
-class CLASSNAME extends Component {
+class HomePage extends Component {
 
     constructor(props) {
         super(props);
     }
 
     componentWillMount() {
-        console.log('CLASSNAME willMount.');
+        console.log('HomePage willMount.');
     }
 
     render() {
@@ -19,4 +19,4 @@ class CLASSNAME extends Component {
     }
 }
 
-export default CLASSNAME;
+export default HomePage;

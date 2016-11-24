@@ -8,7 +8,7 @@ class CLASSNAME extends Component {
     }
 
     componentWillMount() {
-        console.log('CLASSNAME willMount.');
+        console.log('HomePage willMount.');
     }
 
     render() {
