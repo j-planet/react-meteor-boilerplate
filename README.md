@@ -15,6 +15,7 @@ Included are:
 
 ### Setup and Deployment
 
+* A script for deploying on DigitalOcean
 * A script that installs and adds commonly used React and Meteor packages
 
 &nbsp;
