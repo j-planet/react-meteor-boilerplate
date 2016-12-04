@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 npm install --save
-npm install -g --save forever react react-dom react-addons-pure-render-mixin classnames
+npm install -g --save forever react react-dom react-addons-pure-render-mixin classnames react-modal
 
 meteor npm install
+meteor npm install --save react-modal
 
 meteor add react-meteor-data
 meteor add accounts-ui accounts-password
