@@ -57,12 +57,12 @@ class Navbar extends Component {
                     &#9776;
                 </button>
 
-                <Link to="/" className="navbar-brand pull-left">CarpStreet</Link>
+                <Link to="/" className="navbar-brand pull-left">Brand</Link>
 
                 <div className="collapse navbar-toggleable-xs" id="navigationBar">
                     <ul className="nav navbar-nav pull-right">
                         <li className="nav-item">
-                            <a className="nav-link" href="#social">CONNECT</a>
+                            <a className="nav-link" href="#social">Link</a>
                         </li>
                         {
                             this.props.currentUser ?
