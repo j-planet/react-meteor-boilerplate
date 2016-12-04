@@ -1,0 +1,65 @@
+#update {
+
+  #interviewer-checkin {
+    font-weight: 300;
+
+    // "select day" dropdown
+    .dropdown-menu {
+      li a {
+        padding: 0 1em;
+        color: #2b2d2f;
+      }
+
+      li:nth-of-type(5) {
+        margin-bottom: 10px;
+      }
+    }
+    .fa-minus-circle {
+      color: red;
+    }
+
+    .fa-check-circle {
+      color: green;
+    }
+
+    .errorInput {
+      border-color: red;
+    }
+  }
+
+  .infocus {
+    background-color: red;
+  }
+
+  .outoffocus {
+    background-color: #2b2d2f;
+  }
+
+  progress {
+    margin-bottom: 30px;
+  }
+
+  #rewards {
+
+    .card-block {
+      padding: 0;
+    }
+
+    .card {
+      border: 0;
+    }
+
+    .alert-success {
+      margin-bottom: 10px;
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+
+    .smalltext a {
+      font-size: x-small;
+      color: #2b2d2f;
+      text-decoration: underline;
+    }
+  }
+
+}

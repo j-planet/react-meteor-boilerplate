@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { Meteor } from 'meteor/meteor';
-import { createContainer } from 'meteor/react-meteor-data';
+import NavBar from './navbar';
+
 
 
 class App extends Component {
@@ -16,28 +16,13 @@ class App extends Component {
     {
         return (
             <div>
-                Hello from App.
-                { this.props.children }
+                <NavBar />
+                <div className="content">
+                    { this.props.children }
+                </div>
             </div>
         );
     }
 }
 
-App.propTypes = {
-    someArray: PropTypes.array.isRequired,
-    someObject: PropTypes.object
-};
-
-export default createContainer(
-    () =>
-    {
-        Meteor.subscribe('someCollection');
-
-        // these become props in the component
-        return {
-            someArray: [],
-            someObject: null
-        };
-    },
-    App
-);
+export default App;

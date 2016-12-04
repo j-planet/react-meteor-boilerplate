@@ -1,4 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
+const Component = React.Component;
+const PropTypes = React.PropTypes;
+import { createContainer } from 'meteor/react-meteor-data';
 
 
 class HomePage extends Component {
@@ -14,9 +17,19 @@ class HomePage extends Component {
     render() {
         return (
             <div>
+                This is the homepage.
             </div>
         );
     }
 }
 
-export default HomePage;
+HomePage.propTypes = {
+    currentUser: PropTypes.object
+};
+
+export default createContainer(
+    () => {
+        return { currentUser: Meteor.user() };
+    },
+    HomePage
+);

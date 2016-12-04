@@ -1,0 +1,20 @@
+#header
+{
+  background-color: rgba(21, 31, 33, 0.7);
+  border-bottom: 1px solid #dedede;
+
+  .navbar-brand, .nav-item a, button
+  {
+    color: white;
+  }
+
+  a.login-close-text, a.additional-link
+  {
+    color: #2b2d2f;
+  }
+
+  .login-link-text
+  {
+    text-decoration: none;
+  }
+}
