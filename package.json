@@ -1,19 +1,24 @@
 {
-  "name": "meteor-tutorial-3-markdown",
+  "name": "react-meteor-boilerplate",
   "private": true,
   "scripts": {
     "start": "meteor run"
   },
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "classnames": "^2.2.5",
     "codemirror": "^5.17.0",
     "markdown": "^0.5.0",
     "meteor-node-stubs": "~0.2.0",
-    "react": "^15.3.2",
-    "react-addons-pure-render-mixin": "^15.3.2",
+    "moment-timezone": "^0.5.11",
+    "react": "^15.4.2",
+    "react-addons-pure-render-mixin": "^15.4.2",
     "react-codemirror": "^0.2.6",
-    "react-dom": "^15.3.2",
-    "react-modal": "^1.5.2",
-    "react-router": "^2.6.1"
+    "react-dom": "^15.4.2",
+    "react-modal": "^1.7.1",
+    "react-redux": "^5.0.1",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0"
   }
 }
