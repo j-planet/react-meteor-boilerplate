@@ -2,3 +2,6 @@ node_modules/
 .idea/
 .css/
 .DS_store/
+npm-debug.log
+forever_deploy/
+secrets.js
