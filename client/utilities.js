@@ -1,11 +1,16 @@
-/**
- * Created by jj on 10/12/16.
- */
+import React from 'react';
+import _ from 'lodash';
+
+
+Bert.defaults = {
+    hideDelay: 1500,
+    style: 'growl-top-right'
+};
 
 // if error, use Bert to show error bar
 // if success, either run the "success" function (if function) or show it as a message (if string)
 exports.callBackBert = function(success){
-    return (error) =>
+    return (error, data) =>
     {
         if (error)
         {
@@ -14,15 +19,65 @@ exports.callBackBert = function(success){
         }
         else
         {
-            if (typeof(success)=="function") success();
+            if (typeof(success)=="function") success(data);
             else if (typeof(success)=="string") Bert.alert( success, 'success' );
-            else console.log("Dunno what to do with input type", typeof(success));
+            else if (success) console.log("Dunno what to do with input type", typeof(success));
         }
     };
 };
 
-// a random bonus number in the range of min~max (integers), in muplties of multi (e.g. 5)
-exports.computeBonus = function(min, max, multi) {
-    const n = Math.floor(min + (max - min) * Math.random());
-    return n + (multi - n % multi);
+// baseName: refs are "baseName-value" (e.g. dressyRadio-average); also used as the group name of radio buttons
+// inline: stacked radio buttons by default, inline if inline=true
+exports.render_radio_buttons = function(onClickCallBack, baseName, values, checkedValue, inline)
+{
+    // TODO: this is silly I know. I just dunno how to define only parts of the default parameters
+    if (typeof checkedValue == 'undefined') checkedValue = null;
+    if (typeof inline == 'undefined') inline = false;
+
+    if (inline) {
+        return values.map(v =>
+            <label className="form-check-inline" key={v}>
+                <input ref={`$baseName-$v`}
+                       name={baseName}
+                       value={v}
+                       className="form-check-input" type="radio"
+                       checked={checkedValue == v}
+                       onChange={onClickCallBack}
+                /> {v}
+            </label>
+        )
+    }
+    else {
+        return values.map(v =>
+            <div className="form-check" key={v}>
+                <label className="form-check-label">
+                    <input ref={`$baseName-$v`}
+                           name={baseName}
+                           value={v}
+                           className="form-check-input" type="radio"
+                           checked={checkedValue == v}
+                           onChange={onClickCallBack}
+                    /> {v}
+                </label>
+            </div>
+        )
+    }
+};
+
+exports.render_dropdown = function (items, clickHandler, displayText)
+{
+    const dropdownItems = items.map(item =>
+            <a className="dropdown-item" href="#" name={item} key={item} onClick={clickHandler}>{item}</a>
+        );
+
+    return <div className="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {displayText}
+        </button>
+
+        <div className="dropdown-menu" aria-labelledby="categoryDropdown">
+            { dropdownItems }
+        </div>
+    </div>;
 };
