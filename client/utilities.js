@@ -64,14 +64,14 @@ exports.render_radio_buttons = function(onClickCallBack, baseName, values, check
     }
 };
 
-exports.render_dropdown = function (items, clickHandler, displayText)
+exports.render_dropdown = function (items, clickHandler, displayText, inline)
 {
     const dropdownItems = items.map(item =>
             <a className="dropdown-item" href="#" name={item} key={item} onClick={clickHandler}>{item}</a>
         );
 
-    return <div className="dropdown">
-        <button className="btn btn-secondary dropdown-toggle" type="button"
+    return <div className={inline ? "btn-group" : "dropdown"}>
+        <button className="btn dropdown-toggle" type="button"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {displayText}
         </button>
